@@ -17,3 +17,13 @@ const startServer = async () => {
 };
 
 startServer();
+
+// {
+//   "version": 2,
+//   "rewrites": [
+//     {
+//       "source": "/(.*)",
+//       "destination": "/api/index"
+//     }
+//   ]
+// }

@@ -1,9 +1,22 @@
 {
   "version": 2,
-  "rewrites": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/api/index"
+      "src": "api/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["swagger.yaml"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "api/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "api/index.js"
     }
   ]
 }
