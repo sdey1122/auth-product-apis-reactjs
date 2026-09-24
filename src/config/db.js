@@ -3,7 +3,7 @@ const logger = require("../utils/logger");
 
 const connectDB = async () => {
   try {
-    // Reuse existing connection on Vercel's warm serverless instances
+    // Reuse existing connection on Vercel's serverless instances
     if (mongoose.connection.readyState === 1) {
       return;
     }
