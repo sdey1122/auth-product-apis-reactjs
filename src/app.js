@@ -10,7 +10,7 @@ const logger = require("./utils/logger");
 
 const app = express();
 
-const swaggerDocument = YAML.load(path.join(__dirname, "../swagger.yaml"));
+const swaggerDocument = YAML.load(path.join(__dirname, "swagger.yaml"));
 
 app.use(
   cors({
