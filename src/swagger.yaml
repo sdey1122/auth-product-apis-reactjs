@@ -12,6 +12,9 @@ servers:
   - url: https://auth-product-apis-reactjs.onrender.com/api
     description: Render Production
 
+  - url: https://auth-product-apis-reactjs.vercel.app/api
+    description: Vercel Production
+
 tags:
   - name: Authentication
     description: Authentication and email verification APIs
