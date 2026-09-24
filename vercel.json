@@ -3,10 +3,7 @@
   "builds": [
     {
       "src": "api/index.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["swagger.yaml"]
-      }
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -15,7 +12,11 @@
       "dest": "api/index.js"
     },
     {
-      "src": "/(.*)",
+      "src": "/api-docs(.*)",
+      "dest": "api/index.js"
+    },
+    {
+      "src": "/",
       "dest": "api/index.js"
     }
   ]
