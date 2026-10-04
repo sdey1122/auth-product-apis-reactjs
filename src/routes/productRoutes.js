@@ -13,7 +13,7 @@ router.get("/products/:slug", productController.getProductBySlug);
 router.get(
   "/admin/products",
   authenticate,
-  authorizeRoles("admin"),
+  // authorizeRoles("admin"),
   productController.getAdminProducts,
 );
 
