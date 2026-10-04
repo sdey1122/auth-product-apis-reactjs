@@ -6,14 +6,19 @@ const { uploadProductImages } = require("../middlewares/uploadMiddleware");
 
 const router = express.Router();
 
-router.get("/products", productController.getPublishedProducts);
+router.get(
+  "/products",
+  authenticate,
+  authorizeRoles("user", "admin"),
+  productController.getPublishedProducts,
+);
 
 router.get("/products/:slug", productController.getProductBySlug);
 
 router.get(
   "/admin/products",
   authenticate,
-  // authorizeRoles("admin"),
+  authorizeRoles("admin"),
   productController.getAdminProducts,
 );
 
