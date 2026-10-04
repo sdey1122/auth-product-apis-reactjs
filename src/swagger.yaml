@@ -737,52 +737,15 @@ paths:
           description: Category not found
 
   /products:
-    get:
-      tags:
-        - Products
-      summary: Get published products
-      parameters:
-        - name: category
-          in: query
-          required: false
-          schema:
-            type: string
-          example: Electronics
-        - name: search
-          in: query
-          required: false
-          schema:
-            type: string
-          example: headphones
-        - name: minprice
-          in: query
-          required: false
-          schema:
-            type: number
-          example: 1000
-        - name: maxprice
-          in: query
-          required: false
-          schema:
-            type: number
-          example: 5000
-        - name: page
-          in: query
-          required: false
-          schema:
-            type: integer
-            default: 1
-          example: 1
-        - name: limit
-          in: query
-          required: false
-          schema:
-            type: integer
-            default: 10
-          example: 10
-      responses:
-        "200":
-          description: Published products retrieved successfully
+  get:
+    tags:
+      - Products
+    summary: Get all published products
+    responses:
+      "200":
+        description: Products fetched successfully
+      "500":
+        description: Something went wrong
 
   /products/{slug}:
     get:
