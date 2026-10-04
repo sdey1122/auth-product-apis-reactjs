@@ -566,7 +566,7 @@ paths:
         "404":
           description: User not found
 
-    /categories:
+  /categories:
     get:
       tags:
         - Categories
@@ -574,8 +574,6 @@ paths:
       responses:
         "200":
           description: Published categories retrieved successfully
-        "500":
-          description: Internal server error
 
   /category/{id}:
     get:
@@ -738,16 +736,53 @@ paths:
         "404":
           description: Category not found
 
-    /products:
+  /products:
     get:
       tags:
         - Products
       summary: Get published products
+      parameters:
+        - name: category
+          in: query
+          required: false
+          schema:
+            type: string
+          example: Electronics
+        - name: search
+          in: query
+          required: false
+          schema:
+            type: string
+          example: headphones
+        - name: minprice
+          in: query
+          required: false
+          schema:
+            type: number
+          example: 1000
+        - name: maxprice
+          in: query
+          required: false
+          schema:
+            type: number
+          example: 5000
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 1
+          example: 1
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 10
+          example: 10
       responses:
         "200":
           description: Published products retrieved successfully
-        "500":
-          description: Internal server error
 
   /products/{slug}:
     get:
