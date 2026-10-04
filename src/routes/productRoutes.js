@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get("/products", productController.getPublishedProducts);
 
-// router.get("/products/:slug", productController.getProductBySlug);
+router.get("/products/:slug", productController.getProductBySlug);
 
 router.get(
   "/admin/products",
