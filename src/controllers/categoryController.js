@@ -126,7 +126,6 @@ class CategoryController {
         });
       }
 
-      // Multer memoryStorage provides req.file.buffer.
       const uploadedImage = await uploadToCloudinary(
         req.file.buffer,
         "role-auth/categories",
@@ -197,7 +196,6 @@ class CategoryController {
       if (req.file) {
         const oldPublicId = category.image?.publicId;
 
-        // Upload the new image directly from memory.
         const uploadedImage = await uploadToCloudinary(
           req.file.buffer,
           "role-auth/categories",
