@@ -6,11 +6,7 @@ const { uploadProductImages } = require("../middlewares/uploadMiddleware");
 
 const router = express.Router();
 
-router.get(
-  "/products",
-  // authenticate,
-  productController.getPublishedProducts,
-);
+router.get("/products", productController.getPublishedProducts);
 
 router.get("/products/:slug", productController.getProductBySlug);
 
