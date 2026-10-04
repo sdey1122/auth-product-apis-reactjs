@@ -8,8 +8,7 @@ const router = express.Router();
 
 router.get(
   "/products",
-  authenticate,
-  authorizeRoles("user", "admin"),
+  // authenticate,
   productController.getPublishedProducts,
 );
 
